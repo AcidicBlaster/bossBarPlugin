@@ -1,0 +1,30 @@
+package com.acidicblaster.plugin;
+
+import org.bukkit.plugin.java.JavaPlugin;
+
+import net.md_5.bungee.api.ChatColor;
+
+import org.bukkit.Bukkit;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
+
+
+public class Main extends JavaPlugin
+{
+
+	BossBar bossBar;
+	
+	@Override
+	public void onEnable() 
+	{
+	Bukkit.getPluginManager().registerEvents(new JoinListener(this), this);
+	
+	 bossBar = Bukkit.createBossBar(ChatColor.YELLOW + "Welcome to RockyLegends!", 
+			BarColor.RED,
+			BarStyle.SOLID);
+	}
+	
+}
+  
+
